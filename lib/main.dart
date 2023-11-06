@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habot_tracker/views/daily_progress_target_view/daily_progress_target_view.dart';
-import 'package:habot_tracker/views/habit_status/habit_status.dart';
-import 'package:habot_tracker/views/splash_screen/splash_screen.dart';
+
+import 'package:habot_tracker/views/notification_view/notification_view.dart';
+import 'package:habot_tracker/views/settings_view/settings_view.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HabitStatus(),
+      home: const SettingsView(),
     );
   }
 }

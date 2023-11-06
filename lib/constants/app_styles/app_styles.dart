@@ -7,6 +7,11 @@ class AppStyles {
     fontWeight: FontWeight.bold,
     color: const Color(0xff1D1617),
   );
+  static final TextStyle headlineBoldWhite = GoogleFonts.rubik(
+    fontSize: 24.0,
+    fontWeight: FontWeight.bold,
+    color: const Color(0xffffffff),
+  );
   static final TextStyle smallheadlineBoldBlack = GoogleFonts.rubik(
     fontSize: 20.0,
     fontWeight: FontWeight.bold,
@@ -130,6 +135,10 @@ class AppStyles {
       color: const Color(0xff4D57C8),
       fontSize: 24,
       fontWeight: FontWeight.w300);
+  static final TextStyle mediumSizedWhiteHeading = GoogleFonts.inter(
+      color: const Color(0xffffffff),
+      fontSize: 24,
+      fontWeight: FontWeight.w300);
   static final TextStyle smallRegularBodyBlack = GoogleFonts.rubik(
       color: const Color(0xff000000),
       fontSize: 11,
@@ -154,6 +163,16 @@ class AppStyles {
     'Walking'
   ];
   static List<String> progressPercent = ['75%', '40%', '40%', '65%'];
+  static List<String> drawerText = [
+    "Profile",
+    "Today",
+    "Your stats",
+    "Challanges",
+    "All habits",
+    "Notification",
+    "Setting",
+    "Try Free"
+  ];
   static List<String> imagesPath = [
     "assets/images/water_glass.png",
     "assets/images/cycle.png",
@@ -171,6 +190,39 @@ class AppStyles {
   static List<String> listTileLogo = [
     'assets/images/drinking_water_listTile.png',
     'assets/images/eating_snack_listTile.png'
+  ];
+  static List<String> notificationViewListTileTitle = [
+    "Hey,its time for lunch",
+    'Dont miss your lower body workout',
+    'Hey,lets add some meals for you',
+    'Congratulations,you have finished',
+    'Hey,its time for lunch',
+    'Ups,you have missed you lowerbody workout'
+  ];
+  static List<String> notificationViewListTileSubTitle = [
+    "About 1 minutes ago",
+    'About 3 hours ago',
+    'About 3 hours ago',
+    '29 May',
+    '8 April',
+    '3 April'
+  ];
+  static List<String> notifcationListTileLogo = [
+    "assets/images/notifcation_1.png",
+    "assets/images/notification_2.png",
+    "assets/images/notification_3.png",
+    "assets/images/notification_2.png",
+    "assets/images/notification_2.png",
+    "assets/images/notification_2.png"
+  ];
+  static List<String> settingsScreenListTileTitle = [
+    "Profile",
+    "Sound",
+    "Vibration mode",
+    "Login with web account",
+    "Help",
+    "Rate us",
+    "Share App"
   ];
   static List<String> firstWeek = ["1", '2', '3', '4', '5', '6', '7'];
   static List<String> secondWeek = ["8", '9', '10', '11', '12', '13', '14'];

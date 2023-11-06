@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:habot_tracker/constants/app_styles/app_styles.dart';
 
 // ignore: must_be_immutable
 class ReusableListTileContainer extends StatelessWidget {
-  String title;
-  String description;
-  dynamic image;
+  String? title;
+  String? description;
+  Widget? widget;
+  String? trailingLogo;
+
+  double? trailingLogoHeight;
+  double? trailingLogoWidth;
+  String? image;
   double? width;
   double height;
-  double logoHeight;
-  double logoWidth;
+  double? logoHeight;
+  double? logoWidth;
   double? fontSizeTitle;
   FontWeight? fontWeightTile;
   double? fontSizeSubtitle;
@@ -20,15 +24,19 @@ class ReusableListTileContainer extends StatelessWidget {
   int? color;
   ReusableListTileContainer(
       {super.key,
-      required this.description,
-      required this.image,
-      required this.title,
+      this.trailingLogoHeight,
+      this.trailingLogoWidth,
+      this.widget,
+      this.description,
+      this.trailingLogo,
+      this.image,
+      this.title,
       this.subTitleColor,
       this.titleColor,
       this.width,
       required this.height,
-      required this.logoHeight,
-      required this.logoWidth,
+      this.logoHeight,
+      this.logoWidth,
       this.fontSizeSubtitle,
       this.fontSizeTitle,
       this.fontWeightSubtitle,
@@ -45,27 +53,44 @@ class ReusableListTileContainer extends StatelessWidget {
         decoration: BoxDecoration(
             color: Color(color ?? 0), borderRadius: BorderRadius.circular(16)),
         child: Padding(
-          padding: const EdgeInsets.only(top: 7, bottom: 20, left: 5),
+          padding: const EdgeInsets.only(top: 7, left: 5),
           child: ListTile(
             title: Text(
-              title,
+              title ?? "",
               style: GoogleFonts.rubik(
                   fontWeight: fontWeightTile,
                   fontSize: fontSizeTitle ?? 0,
-                  color: Color(titleColor ?? 0)),
+                  color: Color(titleColor ?? 0XFF000000)),
             ),
-            subtitle: Text(
-              description,
-              style: GoogleFonts.rubik(
-                  fontWeight: fontWeightSubtitle,
-                  fontSize: fontSizeSubtitle ?? 0,
-                  color: Color(subTitleColor ?? 0)),
+            subtitle: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  description ?? '',
+                  style: GoogleFonts.rubik(
+                      fontWeight: fontWeightSubtitle,
+                      fontSize: fontSizeSubtitle ?? 0,
+                      color: Color(subTitleColor ?? 0xFF000000)),
+                ),
+                const SizedBox(
+                  height: 31,
+                ),
+                widget ?? Container()
+              ],
             ),
             leading: Container(
-                height: logoHeight,
-                width: logoWidth,
+                height: logoHeight ?? 0.0,
+                width: logoWidth ?? 0.0,
                 decoration: const BoxDecoration(),
-                child: Image.asset(image)),
+                child: Image.asset(image ?? "")),
+            trailing: Container(
+              height: trailingLogoHeight ?? 0.0,
+              width: trailingLogoWidth ?? 0.0,
+              decoration: const BoxDecoration(),
+              child: FittedBox(
+                  fit: BoxFit.cover, child: Image.asset(trailingLogo ?? "")),
+            ),
           ),
         ),
       ),
