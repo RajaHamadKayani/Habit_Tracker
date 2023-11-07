@@ -7,7 +7,7 @@ class ReusableListTileContainer extends StatelessWidget {
   String? description;
   Widget? widget;
   String? trailingLogo;
-
+  double? borderRadius;
   double? trailingLogoHeight;
   double? trailingLogoWidth;
   String? image;
@@ -24,6 +24,7 @@ class ReusableListTileContainer extends StatelessWidget {
   int? color;
   ReusableListTileContainer(
       {super.key,
+      this.borderRadius,
       this.trailingLogoHeight,
       this.trailingLogoWidth,
       this.widget,
@@ -51,7 +52,7 @@ class ReusableListTileContainer extends StatelessWidget {
         width: width ?? 0.0,
         height: height,
         decoration: BoxDecoration(
-            color: Color(color ?? 0), borderRadius: BorderRadius.circular(16)),
+            color: Color(color ?? 0), borderRadius: BorderRadius.circular(borderRadius ?? 16)),
         child: Padding(
           padding: const EdgeInsets.only(top: 7, left: 5),
           child: ListTile(

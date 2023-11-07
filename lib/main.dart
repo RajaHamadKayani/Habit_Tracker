@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 
 import 'package:habot_tracker/views/notification_view/notification_view.dart';
 import 'package:habot_tracker/views/settings_view/settings_view.dart';
+import 'package:habot_tracker/views/sign_in_view/sign_in_view.dart';
+import 'package:habot_tracker/views/sign_up_view/sign_up_view.dart';
 
 
 void main() {
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SettingsView(),
+      home: const SignUpView(),
     );
   }
 }

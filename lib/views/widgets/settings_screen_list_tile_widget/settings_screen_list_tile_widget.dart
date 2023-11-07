@@ -26,6 +26,7 @@ class SettingsScreenListTileWidget extends StatelessWidget {
                   title: AppStyles.settingsScreenListTileTitle[index],
                   titleColor: 0xffffffff,
                   fontSizeTitle: 19,
+                  borderRadius: 0,
                   fontWeightTile: FontWeight.w600,
                 ),
               ),
