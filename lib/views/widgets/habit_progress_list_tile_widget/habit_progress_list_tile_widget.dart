@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habot_tracker/constants/app_styles/app_styles.dart';
+import 'package:habot_tracker/views/responsive_layout/responsive_layout.dart';
 import 'package:habot_tracker/views/widgets/reusable_listtile_container/reusable_listtile_container.dart';
 
 class HabitProgressListTileWidget extends StatelessWidget {
@@ -23,6 +24,8 @@ class HabitProgressListTileWidget extends StatelessWidget {
                     color: 0xffffffff,
                     titleColor: 0xff000000,
                     subTitleColor: 0xff000000,
+                    fontSizeSubtitle: !ResponsiveLayout.mobileView(context)?15:11,
+                    fontSizeTitle: !ResponsiveLayout.mobileView(context)?17:13,
                     description: AppStyles.listTileDescription[index],
                     image: AppStyles.listTileLogo[index],
                     title: AppStyles.listTileTitle[index],

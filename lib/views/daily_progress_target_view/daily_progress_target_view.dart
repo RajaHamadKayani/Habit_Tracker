@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habot_tracker/constants/app_styles/app_styles.dart';
 import 'package:habot_tracker/view_model/controllers/daily_progress_counter_controller/daily_progress_counter_controller.dart';
+import 'package:habot_tracker/views/habit_status/habit_status.dart';
 import 'package:habot_tracker/views/responsive_layout/responsive_layout.dart';
 import 'package:habot_tracker/views/widgets/container_widget/container_widget.dart';
 import 'package:habot_tracker/views/widgets/daily_progress_daily_target_container/daily_progress_daily_target_container.dart';
@@ -61,32 +62,37 @@ class _DailyProgressTargetViewState extends State<DailyProgressTargetView> {
                       width: !ResponsiveLayout.mobileView(context)
                           ? MediaQuery.of(context).size.width - 338
                           : MediaQuery.of(context).size.width - 28,
-                      widget: const SingleChildScrollView(
+                      widget: SingleChildScrollView(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            DailyProgressIconRow(),
-                            SizedBox(
+                            const DailyProgressIconRow(),
+                            const SizedBox(
                               height: 38,
                             ),
-                            DailyProgressDailyTargetContainer(),
-                            SizedBox(
+                            GestureDetector(
+                                onTap: () {
+                                  Get.to(const HabitStatus());
+                                },
+                                child:
+                                    const DailyProgressDailyTargetContainer()),
+                            const SizedBox(
                               height: 21,
                             ),
-                            DailyProgressRowText(),
-                            SizedBox(
+                            const DailyProgressRowText(),
+                            const SizedBox(
                               height: 15,
                             ),
-                            DailyProgressGraphContainer(),
-                            SizedBox(
+                            const DailyProgressGraphContainer(),
+                            const SizedBox(
                               height: 30,
                             ),
-                            HabitProgressRowText(),
-                            SizedBox(
+                            const HabitProgressRowText(),
+                            const SizedBox(
                               height: 15,
                             ),
-                            HabitProgressListTileWidget()
+                            const HabitProgressListTileWidget()
                           ],
                         ),
                       ),

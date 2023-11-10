@@ -2,15 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habot_tracker/constants/app_styles/app_styles.dart';
 
-class DrawerWidget extends StatelessWidget {
+class DrawerWidget extends StatefulWidget {
   double? width;
   DrawerWidget({super.key, this.width});
 
   @override
+  State<DrawerWidget> createState() => _DrawerWidgetState();
+}
+
+class _DrawerWidgetState extends State<DrawerWidget> {
+  
+  
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height,
-      width: width ?? 0,
+      width: widget.width ?? 0,
       decoration: const BoxDecoration(color: AppStyles.whiteColor),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -72,15 +79,19 @@ class DrawerWidget extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 5),
                       child: ClipRRect(
-                        child: Container(
-                          height: 52,
-                          width: double.infinity,
-                          decoration: const BoxDecoration(color: Colors.white),
-                          child: Card(
-                            child: ListTile(
-                              title: Text(
-                                AppStyles.drawerText[index],
-                                style: AppStyles.mediumSmallBodyBlack,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 52,
+                            width: double.infinity,
+                            decoration:
+                                const BoxDecoration(color: Colors.white),
+                            child: Card(
+                              child: ListTile(
+                                title: Text(
+                                  AppStyles.drawerText[index],
+                                  style: AppStyles.mediumSmallBodyBlack,
+                                ),
                               ),
                             ),
                           ),

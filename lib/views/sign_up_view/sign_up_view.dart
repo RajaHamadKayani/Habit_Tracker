@@ -252,36 +252,41 @@ class _SignUpViewState extends State<SignUpView> {
                   const SizedBox(
                     height: 32,
                   ),
-                  ContainerWidget(
-                    height: 60,
-                    width: double.infinity,
-                    color: 0xff8E97FD,
-                    borderRadius: 50,
-                    widget: Center(
-                      child: TextWidget(
-                        text: "GET STARTED",
-                        textStyle: GoogleFonts.rubik(
-                            color: const Color(0xffF6F1FB),
-                            fontWeight: FontWeight.w600,
-                            fontSize: !ResponsiveLayout.mobileView(context)
-                                ? 20
-                                : 13),
+                  GestureDetector(
+                    onTap: () {
+                      signUpControoler.registerUser(context);
+                    },
+                    child: ContainerWidget(
+                      height: 60,
+                      width: double.infinity,
+                      color: 0xff8E97FD,
+                      borderRadius: 50,
+                      widget: Center(
+                        child: TextWidget(
+                          text: "GET STARTED",
+                          textStyle: GoogleFonts.rubik(
+                              color: const Color(0xffF6F1FB),
+                              fontWeight: FontWeight.w600,
+                              fontSize: !ResponsiveLayout.mobileView(context)
+                                  ? 20
+                                  : 13),
+                        ),
                       ),
                     ),
                   ),
-                      const SizedBox(
-                      height: 50,
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  Center(
+                    child: TextWidget(
+                      text: "I ALREADY HAVE AN ACCOUNT ? SIGN IN",
+                      textStyle: GoogleFonts.rubik(
+                          fontWeight: FontWeight.w500,
+                          fontSize:
+                              !ResponsiveLayout.mobileView(context) ? 20 : 14,
+                          color: const Color(0xff3F414E)),
                     ),
-                    Center(
-                      child: TextWidget(
-                        text: "I ALREADY HAVE AN ACCOUNT ? SIGN IN",
-                        textStyle: GoogleFonts.rubik(
-                            fontWeight: FontWeight.w500,
-                            fontSize:
-                                !ResponsiveLayout.mobileView(context) ? 20 : 14,
-                            color: const Color(0xff3F414E)),
-                      ),
-                    )
+                  )
                 ],
               ),
             )

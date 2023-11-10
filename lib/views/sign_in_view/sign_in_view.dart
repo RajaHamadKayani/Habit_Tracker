@@ -119,9 +119,9 @@ class _SignInViewState extends State<SignInView> {
                                     ? 45
                                     : 15,
                               ),
-                              Text(
-                                "CONTINUE WITH GOOGLE",
-                                style: GoogleFonts.rubik(
+                              TextWidget(
+                                text: "CONTINUE WITH GOOGLE",
+                                textStyle: GoogleFonts.rubik(
                                     color: Colors.black,
                                     fontWeight: FontWeight.w600,
                                     fontSize:
@@ -194,20 +194,25 @@ class _SignInViewState extends State<SignInView> {
                     const SizedBox(
                       height: 30,
                     ),
-                    ContainerWidget(
-                      height: 63,
-                      width: double.infinity,
-                      color: 0xff8E97FD,
-                      borderRadius: 50,
-                      widget: Center(
-                        child: TextWidget(
-                          text: "LOG IN",
-                          textStyle: GoogleFonts.rubik(
-                              fontSize: !ResponsiveLayout.mobileView(context)
-                                  ? 18
-                                  : 13,
-                              fontWeight: FontWeight.w500,
-                              color: const Color(0xffF6F1FB)),
+                    GestureDetector(
+                      onTap: () {
+                        signInController.loginUser(context);
+                      },
+                      child: ContainerWidget(
+                        height: 63,
+                        width: double.infinity,
+                        color: 0xff8E97FD,
+                        borderRadius: 50,
+                        widget: Center(
+                          child: TextWidget(
+                            text: "LOG IN",
+                            textStyle: GoogleFonts.rubik(
+                                fontSize: !ResponsiveLayout.mobileView(context)
+                                    ? 18
+                                    : 13,
+                                fontWeight: FontWeight.w500,
+                                color: const Color(0xffF6F1FB)),
+                          ),
                         ),
                       ),
                     ),
